@@ -54,7 +54,7 @@ Param | Description | Default |
 `connection_inactivity_timeout_ms` | The duration after which a connection is destroyed by the robot if no communication is detected between the client and the robot. | - |
 `use_internal_bus_gripper_comm` | Boolean value to indicate if your gripper will be communicated with through the internal Kinova communication interface. Set to true if the gripper is directly plugged into the kinova arm. Set to false if running in simulation or if gripper is connected to PC via USB. Setting to false will create a ros2_control instance for the gripper. | false |
 `use_fake_hardware` | Boolean value to indicate whether or not the hardware components will be mocked. If true the hardware params will be ignored and the hardware components will be mocked. | false |
-`fake_sensor_commands` | Boolean value. If set to true will create fake command interfaces for faking sensor measurements with an external command. | false |
+`mock_sensor_commands` | Boolean value. If set to true will create fake command interfaces for faking sensor measurements with an external command. | false |
 `sim_gazebo` | Boolean value to indicate whether or not the gazebo_ros2_control/GazeboSystem plugin will be loaded. | false |
 `sim_ignition` | Boolean value to indicate whether or not the ign_ros2_control/IgnitionSystem plugin will be loaded. | false |
 `sim_isaac` | Boolean value to indicate whether or not the topic_based_ros2_control/TopicBasedSystem plugin will be loaded and the "joint_commands_topic" and "joint_states_topic" parameters will be set to the `isaac_joint_commands` and `isaac_joint_states` values respectively. | false |
@@ -94,7 +94,7 @@ Param | Description | Default |
     use_fake_hardware="false"
     initial_positions="${initial_positions}"
     use_external_cable="true"
-    fake_sensor_commands="false"
+    mock_sensor_commands="false"
     gripper_com_port="">
     <origin xyz="0 0 0.0" rpy="0 0 0" />
   </xacro:load_robot>
